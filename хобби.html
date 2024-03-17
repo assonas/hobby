@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      border: 1px solid black;
+      border-radius: 4px;
+      color: #3c763d;
+      background-color: #dff0d8;
+      width: 500px;
+      height: 50px;
+      font-size: 25px;
+      background-color: wheat;
+    }
+    button{
+      background-color: wheat;
+      border-radius: 4px;
+      width: 250px;
+      height: 50px;
+      position: absolute; top: 405px; left: 770px;
+      color: black;
+      font-size: 25px;
+      font-weight: bolder;
+      font-family: cursive;
+    }
+    .button{
+      background-color: wheat;
+      border-radius: 4px;
+      width: 250px;
+      height: 50px;
+      position: absolute; top: 345px; left: 770px;
+      color: black;
+      font-size: 25px;
+      font-weight: bolder;
+      font-family: cursive;
+    }
+    p{
+      font-size: 20px;
+      font-weight: bolder;
+      font-family: cursive;
+    }
+  </style>
+</head>
+<body onload="f()">
+<p>Введите ваши хобби в текстовые поля в формате "катание на велосипеде, футбол и т.д."</p>
+<button onclick="out()">Конец</button>
+<button onclick="more()" class="button">Добавить поле</button>
+
+<script type="text/javascript">
+function f() {
+    let input = document.createElement('input');
+    input.type = 'text'
+    document.body.appendChild(input);
+}
+function more(){
+	let input = document.createElement('input')
+	input.type = 'text'
+	document.body.appendChild(input)
+}
+function out() {
+  let output = document.querySelectorAll('input[type="text"]');
+  let out = [];
+
+  output.forEach(input => {
+    out.push(input.value);
+  });
+  alert('Ваши хобби: ' + out)
+  console.log(out);
+  location.reload()
+}
+</script>
+</body>
+</html>
